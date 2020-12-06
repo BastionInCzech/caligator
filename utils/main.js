@@ -22,7 +22,9 @@ const textForOperators = {
 
 
 //Variables in calculations
-let known_variables = {}
+let known_variables = {
+	"test" : "<b>test</b>"
+}
 
 const containsOnlyLetters = str => {return /^[a-zA-Z]+$/.test(str)};
 
@@ -170,7 +172,8 @@ const main = exp => {
 				: ''
 			: '';
 	} catch (error) {
-		return '';
+		console.log("Evaulate error")
+		return exp;
 	}
 };
 
