@@ -216,14 +216,15 @@ function evaluate(arr) {
 		result.className = '__output';
 		if (
 			Number(parseFloat(value)) === parseFloat(value) &&
-			parseFloat(value) % 1 !== 0
+			parseFloat(value) % 1 !== 0 &&
+			false
 		) {
 			value = parseFloat(value);
 			result.innerText += +value.toFixed(
 				window.localStorage.decimalPoint
 			);
 		} else {
-			result.innerText += value;
+			result.innerHTML += value;
 		}
 		result.addEventListener('click', function() {
 			copyClicked(this);
